@@ -4,6 +4,7 @@
     Author     : Nikesh
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,18 +36,19 @@
                     <input type="password" name="password" autocomplete="off" placeholder="Password" required />
                 </div>
                 <div class="form-group">
-                    <select name="field_of_study" required>
+                    <select name="fieldOfStudy" required>
                         <option value="">Select Field of Study</option>
-                        <option value="1">Computer Science</option>
-                        <option value="2">Business Administration</option>
-                        <option value="3">Civil Engineering</option>
-                        <option value="4">Social Work</option>
+                        <c:forEach var="field" items="${fieldOfStudyList}">
+                            <c:set var="fieldValue" value="${field.fieldId}" />
+                            <c:set var="fieldName" value="${field.fieldName}" />
+                            <option value="<c:out value="${fieldValue}" />"><c:out value="${fieldName}" /></option>
+                        </c:forEach>
                     </select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="get started" />
                 </div>
-                <span style="color: #b3b3b3;">Already have an account?<a href="login.html"> Sign In</a></span>
+                <span style="color: #b3b3b3;">Already have an account?<a href="<c:url value="/" />"> Sign In</a></span>
             </form>
         </div>
 

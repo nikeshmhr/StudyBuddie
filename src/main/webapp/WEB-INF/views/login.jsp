@@ -4,6 +4,7 @@
     Author     : Nikesh
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
                 <div class="form-group">
                     <input type="submit" value="sign in" />
                 </div>
-                <span style="color: #b3b3b3;">Not registered?<a href="signup.html"> Create account</a></span>
+                <span style="color: #b3b3b3;">Not registered?<a href="<c:url value='/register' />"> Create account</a></span>
             </form>
         </div>
 
