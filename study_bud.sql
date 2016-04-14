@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2016 at 03:01 PM
+-- Generation Time: Apr 14, 2016 at 02:04 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -240,6 +240,8 @@ CREATE TABLE IF NOT EXISTS `users` (
   `field_of_study` int(4) NOT NULL,
   `account_status` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `username` (`username`),
   KEY `field_of_study` (`field_of_study`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
