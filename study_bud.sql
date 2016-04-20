@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2016 at 02:04 PM
+-- Generation Time: Apr 20, 2016 at 09:33 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -206,7 +206,7 @@ INSERT INTO `field_of_study` (`field_id`, `field_name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `registration_confirmations` (
   `user_id` int(11) NOT NULL,
-  `random_code` int(6) NOT NULL,
+  `random_code` varchar(50) NOT NULL,
   KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
